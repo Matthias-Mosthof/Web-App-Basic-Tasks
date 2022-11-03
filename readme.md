@@ -1,1 +1,1 @@
-#Building a Light Switch using JavaScript.
+# Building a Light Switch using JavaScript.
