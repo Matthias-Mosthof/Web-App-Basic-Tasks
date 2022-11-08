@@ -7,5 +7,4 @@ function toggle() {
 
   btn.classList.toggle("btn2");
 }
-
 btn.addEventListener("click", toggle);
