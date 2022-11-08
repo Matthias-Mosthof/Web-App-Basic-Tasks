@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container">
+      <label for="r">r</label>
+      <input
+        class="red"
+        id="r"
+        type="range"
+        step="1"
+        min="0"
+        max="255"
+        value="50"
+      />
+      <label for="g">g</label>
+      <input
+        class="green"
+        id="g"
+        type="range"
+        step="1"
+        min="0"
+        max="255"
+        value="50"
+      />
+      <label for="b">b</label>
+      <input
+        class="blue"
+        type="range"
+        id="b"
+        step="1"
+        min="0"
+        max="255"
+        value="0"
+      />
+      <div class="currentColor" id="cC">Test</div>
+    </main>
+    <div class="toChange"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

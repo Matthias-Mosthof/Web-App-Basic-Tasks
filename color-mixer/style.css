@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+.container {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: center;
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  background-color: rgba(188, 184, 184, 0.319);
+}
+
+_input {
+  padding: 2rem;
+}
+
+.currentColor {
+  margin-left: auto;
+}
+
+.red {
+  accent-color: red;
+}
+
+.green {
+  accent-color: green;
+}
+
+.blue {
+  accent-color: blue;
+}
+
+.toChange {
+  background-color: dodgerblue;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}

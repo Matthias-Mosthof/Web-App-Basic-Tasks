@@ -1,0 +1,15 @@
+.wrapper {
+  font-size: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+
+input {
+  width: 2rem;
+  height: 2rem;
+}
