@@ -37,8 +37,15 @@ _input {
 }
 
 .toChange {
-  background-color: dodgerblue;
+  --red: 0;
+  --green: 0;
+  --blue: 0;
+  background-color: rgb(var(--red), var(--green), var(--blue));
   height: 100%;
   width: 100%;
   position: fixed;
+}
+
+.test {
+  color: #d64747;
 }
