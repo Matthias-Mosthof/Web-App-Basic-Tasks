@@ -7,7 +7,7 @@ let deg = 0;
 // aktuelle Sekunden Werte beim Laden der Seite speichern
 secondsOnLoad = Number(new Date().toString().slice(22, 24));
 
-// // aktuelle Minuten speichern und Zeiger beim laden platzieren
+// aktuelle Minuten speichern und Zeiger beim laden platzieren
 minutesOnLoad = Number(new Date().toString().slice(19, 21));
 
 function setMinutesPointer() {
@@ -45,13 +45,14 @@ function rotateValueOnStartSeconds(secondsOnLoad) {
 
 // Funktion die den Zeiger pro Intervall bewegt.
 
+let degRotateInterval = 6;
+
 function rotateSecondsPointer() {
   // Pro Sekunde muss der Zeiger um 6 Grad bewegt werden (360/60)
   // also: Von dort wo der Zeiger zuvor plaziert wurde werden nun immer 6 Grad dazugezählt
-  let degRotateInterval = 6;
+
   let rotateValue =
     rotateValueOnStartSeconds(secondsOnLoad) + degRotateInterval + "deg";
-
   secondsPointer.style.rotate = rotateValue;
   degRotateInterval += 6;
 }
@@ -83,10 +84,10 @@ function rotateValueOnStartMinutes(minutesOnLoad) {
   }
 }
 
+let degRotateIntervalMinutes = 6;
 function rotateMinutesPointer() {
   // Pro Minute muss der Zeiger um 6 Grad bewegt werden (360/60)
   // also: Von dort wo der Zeiger zuvor plaziert wurde werden nun immer 6 Grad dazugezählt
-  let degRotateIntervalMinutes = 6;
 
   if (Number(new Date().toString().slice(22, 24)) == 0) {
     minutesPointer.style.rotate =
@@ -112,10 +113,11 @@ function rotateValueOnStartHours(hoursOnLoad) {
   }
 }
 
+let degRotateIntervalHours = 15;
+
 function rotateHoursPointer() {
   // Pro Stunde muss der Zeiger um 15 Grad bewegt werden (360/24)
   // also: Von dort wo der Zeiger zuvor plaziert wurde werden nun immer 15 Grad dazugezählt
-  let degRotateIntervalHours = 15;
 
   if (Number(new Date().toString().slice(19, 21)) == 0) {
     hourPointer.style.rotate =
