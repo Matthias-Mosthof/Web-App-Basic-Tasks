@@ -2,23 +2,35 @@ const minutesPointer = document.querySelector("#minutes");
 const secondsPointer = document.querySelector("#seconds");
 const hourPointer = document.querySelector("#hours");
 const digital = document.querySelector("#digital");
+let deg = 0;
 
-// aktuelle Stunden / Minuten / Sekunden Werte beim Laden der Seite speichern
+// aktuelle Sekunden Werte beim Laden der Seite speichern
 secondsOnLoad = Number(new Date().toString().slice(22, 24));
 
+// // aktuelle Minuten speichern und Zeiger beim laden platzieren
 minutesOnLoad = Number(new Date().toString().slice(19, 21));
 
+function setMinutesPointer() {
+  minutesPointer.style.rotate =
+    rotateValueOnStartMinutes(minutesOnLoad) + "deg";
+}
+
+setMinutesPointer();
+
+// aktuelle Stunde speichern und Zeiger beim laden platzieren
 hoursOnLoad = Number(new Date().toString().slice(16, 18));
 
-// Variable für rotateValueOnStart
-let deg = 0;
+function setHoursPointer() {
+  hourPointer.style.rotate = rotateValueOnStartHours(hoursOnLoad) + "deg";
+}
+setHoursPointer();
 
 // Funktion die die Gradzahl für den Sekundenzähler beim Laden ausrechnet
 
 function rotateValueOnStartSeconds(secondsOnLoad) {
   let adder = 0;
 
-  for (let i = 0; i < 60; i++) {
+  for (let i = 1; i <= 60; i++) {
     // pro Schleifendurchlauf wird die zu Addierende Zahl um 5 erhöht,
     // da das der Pattern ist um die Gradzahl zu errechnen
     adder += 5;
@@ -33,11 +45,10 @@ function rotateValueOnStartSeconds(secondsOnLoad) {
 
 // Funktion die den Zeiger pro Intervall bewegt.
 
-let degRotateInterval = 0;
-
 function rotateSecondsPointer() {
   // Pro Sekunde muss der Zeiger um 6 Grad bewegt werden (360/60)
   // also: Von dort wo der Zeiger zuvor plaziert wurde werden nun immer 6 Grad dazugezählt
+  let degRotateInterval = 6;
   let rotateValue =
     rotateValueOnStartSeconds(secondsOnLoad) + degRotateInterval + "deg";
 
@@ -59,7 +70,7 @@ setInterval(rotateHoursPointer, 1000);
 function rotateValueOnStartMinutes(minutesOnLoad) {
   let adder = 0;
 
-  for (let i = 0; i < 60; i++) {
+  for (let i = 1; i <= 60; i++) {
     // pro Schleifendurchlauf wird die zu Addierende Zahl um 5 erhöht,
     // da das der Pattern ist um die Gradzahl zu errechnen
     adder += 5;
@@ -75,21 +86,20 @@ function rotateValueOnStartMinutes(minutesOnLoad) {
 function rotateMinutesPointer() {
   // Pro Minute muss der Zeiger um 6 Grad bewegt werden (360/60)
   // also: Von dort wo der Zeiger zuvor plaziert wurde werden nun immer 6 Grad dazugezählt
+  let degRotateIntervalMinutes = 6;
 
-  minutesPointer.style.rotate =
-    rotateValueOnStartMinutes(minutesOnLoad) + "deg";
-
-  if (Number(new Date().toString().slice(22, 24)) == 00) {
+  if (Number(new Date().toString().slice(22, 24)) == 0) {
     minutesPointer.style.rotate =
-      rotateValueOnStartMinutes(minutesOnLoad) + degRotateInterval + "deg";
-    degRotateInterval += 6;
+      rotateValueOnStartMinutes(minutesOnLoad) +
+      degRotateIntervalMinutes +
+      "deg";
   }
 }
 
 function rotateValueOnStartHours(hoursOnLoad) {
   let adder = 0;
 
-  for (let i = 1; i < 24; i++) {
+  for (let i = 1; i <= 24; i++) {
     // pro Schleifendurchlauf wird die zu Addierende Zahl um 14 erhöht,
     // da das der Pattern ist um die Gradzahl zu errechnen
     adder += 14;
@@ -105,11 +115,11 @@ function rotateValueOnStartHours(hoursOnLoad) {
 function rotateHoursPointer() {
   // Pro Stunde muss der Zeiger um 15 Grad bewegt werden (360/24)
   // also: Von dort wo der Zeiger zuvor plaziert wurde werden nun immer 15 Grad dazugezählt
-  hourPointer.style.rotate = rotateValueOnStartHours(hoursOnLoad) + "deg";
-  if (Number(new Date().toString().slice(19, 21)) === 00) {
+  let degRotateIntervalHours = 15;
+
+  if (Number(new Date().toString().slice(19, 21)) == 0) {
     hourPointer.style.rotate =
-      rotateValueOnStartHours(hoursOnLoad) + degRotateInterval + "deg";
+      rotateValueOnStartHours(hoursOnLoad) + degRotateIntervalHours + "deg";
     // 15 Grad pro Stunde (360/24)
-    degRotateInterval += 15;
   }
 }

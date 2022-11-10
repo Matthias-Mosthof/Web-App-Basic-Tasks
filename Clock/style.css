@@ -49,8 +49,8 @@ body {
 .stundenzeiger {
   rotate: 0deg;
   position: absolute;
-  left: 50%;
-  top: 33%;
+  left: 47%;
+  top: 18%;
   transform-origin: bottom left;
   height: 55px;
   width: 7px;
