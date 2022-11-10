@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-remove {
+  width: 10rem;
+}
