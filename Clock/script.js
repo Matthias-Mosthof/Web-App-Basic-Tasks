@@ -94,6 +94,7 @@ function rotateMinutesPointer() {
       rotateValueOnStartMinutes(minutesOnLoad) +
       degRotateIntervalMinutes +
       "deg";
+    degRotateIntervalMinutes += 6;
   }
 }
 
@@ -122,6 +123,7 @@ function rotateHoursPointer() {
   if (Number(new Date().toString().slice(19, 21)) == 0) {
     hourPointer.style.rotate =
       rotateValueOnStartHours(hoursOnLoad) + degRotateIntervalHours + "deg";
+    degRotateIntervalHours += 15;
     // 15 Grad pro Stunde (360/24)
   }
 }
