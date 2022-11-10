@@ -72,8 +72,12 @@ function rotateValueOnStartMinutes(minutesOnLoad) {
   let adder = 0;
 
   for (let i = 1; i <= 60; i++) {
-    // pro Schleifendurchlauf wird die zu Addierende Zahl um 5 erhöht,
-    // da das der Pattern ist um die Gradzahl zu errechnen
+    // pro Schleifendurchlauf wird die zu Addierende Zahl um 5 erhöht, weil:
+    // 360/60 = 6 grad
+    // 1 uhr 6 grad     +5
+    // 2 uhr 12 grad		+10
+    // 3 18 grad		    +15
+    // 4 24 grad		    +20
     adder += 5;
     // wenn beim Durchlauf der aktuelle Minutenwert erreich wird, wird diese addiert mit dem adder.
     // Das ist dann die Gradzahl bei dem der Zeiger beim Laden gesetzt werden muss
@@ -102,8 +106,13 @@ function rotateValueOnStartHours(hoursOnLoad) {
   let adder = 0;
 
   for (let i = 1; i <= 24; i++) {
-    // pro Schleifendurchlauf wird die zu Addierende Zahl um 14 erhöht,
-    // da das der Pattern ist um die Gradzahl zu errechnen
+    // pro Schleifendurchlauf wird die zu Addierende Zahl um 29 erhöht, weil:
+    // 360/12 = 30 grad
+    // 1 uhr 30 grad    +29
+    // 2 uhr 60		      +58
+    // 3 90 uhr		      +87
+    // 4 120 uhr		    +116
+    // usw.
     adder += 29;
     // wenn beim durchlauf der aktuelle Sekundenwert erreich wird, wird diese addiert mit dem adder.
     // Das ist dann die Gradzahl bei dem der Zeiger beim Laden gesetzt werden muss
@@ -114,16 +123,16 @@ function rotateValueOnStartHours(hoursOnLoad) {
   }
 }
 
-let degRotateIntervalHours = 15;
+let degRotateIntervalHours = 30;
 
 function rotateHoursPointer() {
-  // Pro Stunde muss der Zeiger um 15 Grad bewegt werden (360/24)
+  // Pro Stunde muss der Zeiger um 15 Grad bewegt werden (360/12)
   // also: Von dort wo der Zeiger zuvor plaziert wurde werden nun immer 15 Grad dazugezählt
 
   if (Number(new Date().toString().slice(19, 21)) == 0) {
     hourPointer.style.rotate =
       rotateValueOnStartHours(hoursOnLoad) + degRotateIntervalHours + "deg";
-    degRotateIntervalHours += 15;
+    degRotateIntervalHours += 30;
     // 15 Grad pro Stunde (360/24)
   }
 }
