@@ -104,7 +104,7 @@ function rotateValueOnStartHours(hoursOnLoad) {
   for (let i = 1; i <= 24; i++) {
     // pro Schleifendurchlauf wird die zu Addierende Zahl um 14 erhöht,
     // da das der Pattern ist um die Gradzahl zu errechnen
-    adder += 14;
+    adder += 29;
     // wenn beim durchlauf der aktuelle Sekundenwert erreich wird, wird diese addiert mit dem adder.
     // Das ist dann die Gradzahl bei dem der Zeiger beim Laden gesetzt werden muss
     if (hoursOnLoad === i) {
