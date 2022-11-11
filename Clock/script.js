@@ -129,7 +129,10 @@ function rotateHoursPointer() {
   // Pro Stunde muss der Zeiger um 15 Grad bewegt werden (360/12)
   // also: Von dort wo der Zeiger zuvor plaziert wurde werden nun immer 15 Grad dazugezählt
 
-  if (Number(new Date().toString().slice(19, 21)) == 0) {
+  if (
+    Number(new Date().toString().slice(19, 21)) == 0 &&
+    Number(new Date().toString().slice(22, 24) == 0)
+  ) {
     hourPointer.style.rotate =
       rotateValueOnStartHours(hoursOnLoad) + degRotateIntervalHours + "deg";
     degRotateIntervalHours += 30;
