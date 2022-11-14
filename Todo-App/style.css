@@ -88,3 +88,19 @@
 .remove {
   text-decoration: line-through;
 }
+
+.warningDoppelt {
+  color: red;
+  position: absolute;
+  top: 445px;
+  font-size: 12px;
+  display: none;
+}
+
+.warningShort {
+  color: red;
+  position: absolute;
+  top: 445px;
+  font-size: 12px;
+  display: none;
+}
