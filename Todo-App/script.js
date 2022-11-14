@@ -10,8 +10,8 @@ const btnDone = document.querySelector("#done");
 // Objekt das alle Todos enthält, alle neuen Todos werden dort reingeschrieben
 const state = {
   todos: [
-    { description: "Learn HTML", done: false, ID: 1 },
-    { description: "Learn CSS", done: false, ID: 2 },
+    { description: "Learn HTML", done: false, ID: "#" + 11245 },
+    { description: "Learn CSS", done: false, ID: "#" + 21214 },
   ],
 };
 
@@ -74,10 +74,7 @@ function renderTodos() {
     list.appendChild(todoLi);
   });
 
-  /*for (let i = 1; i < state.todos.length; i++)
-    if (state.todos[i].description === state.todos[i - 1].description) {
-      delete state.todos[i];
-    }*/
+  console.log(state.todos);
 }
 
 renderTodos();
