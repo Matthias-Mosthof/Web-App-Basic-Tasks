@@ -9,28 +9,34 @@
   </head>
   <body>
     <main class="main-container">
-      <header>
+        <article class="article">
+      <header class="header">
         <h1>Todo App</h1>
       </header>
-      <article class="article">
+      <section>
+        <h2>Filter & Options</h2>
+      </section>
         <section>
-          <input type="checkbox" id="all" />
+          <input type="radio" id="all" class="radiobtn"/>
           <label for="all">All</label>
         </section>
         <section>
-          <input type="checkbox" id="ppen" />
-          <label for="all">Open</label>
+          <input type="radio" id="open" class="radiobtn" />
+          <label for="open">Open</label>
         </section>
         <section>
-          <input type="checkbox" id="done" />
-          <label for="all">Done</label>
+          <input type="radio" id="done" class="radiobtn" />
+          <label for="done">Done</label>
         </section>
         <button class="btn-remove" id="btn-remove">Remove done Todos</button>
         <section class="input-text-wrapper">
-          <input type="text" />
+          <input type="text" id="inp-add" class="inpadd"/>
           <button class="btn-add" id="btn-add">Add</button>
         </section>
+        <section>
+            <h2>Your Todos</h2>
         <ul id="list"></ul>
+    </section>
       </article>
          <footer></footer>
       <script src="script.js"></script>
