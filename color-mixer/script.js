@@ -4,6 +4,7 @@ const blueSlider = document.querySelector("#b");
 const colorValue = document.querySelector("#color-value");
 const bg = document.querySelector("#bg");
 const header = document.querySelector("main");
+const rndColorBtn = document.querySelector("#random-color");
 
 let hex = "";
 
@@ -30,3 +31,23 @@ function slideIntoColors() {
 redSlider.addEventListener("input", slideIntoColors);
 greenSlider.addEventListener("input", slideIntoColors);
 blueSlider.addEventListener("input", slideIntoColors);
+
+rndColorBtn.addEventListener("click", () => {
+  fetch("https://dummy-apis.netlify.app/api/color")
+    .then((response) => {
+      console.log("OK");
+      return response.json();
+    })
+    .then((data) => {
+      let dynamicRed = data.rgb.r;
+      let dynamicGreen = data.rgb.g;
+      let dynamicBlue = data.rgb.b;
+      let hexText = data.color;
+      bg.style.backgroundColor = `rgb(${dynamicRed}, ${dynamicBlue}, ${dynamicGreen}`;
+      header.style.backgroundColor = `rgb(${dynamicRed}, ${dynamicBlue}, ${dynamicGreen}, 0.40`;
+      redSlider.value = dynamicRed;
+      greenSlider.value = dynamicGreen;
+      blueSlider.value = dynamicBlue;
+      colorValue.innerText = hexText;
+    });
+});

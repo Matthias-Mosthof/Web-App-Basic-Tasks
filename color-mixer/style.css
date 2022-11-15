@@ -5,6 +5,7 @@
 body {
   margin: 0;
 }
+
 .container {
   display: flex;
   padding: 2rem;
@@ -13,7 +14,7 @@ body {
   font-size: 2rem;
   font-family: "Courier New", Courier, monospace;
   font-weight: 900;
-  background-color: rgba(188, 184, 184, 0.319);
+  background-color: rgba(188, 184, 184, 0.449);
 }
 
 _input {
@@ -48,4 +49,14 @@ _input {
 
 .test {
   color: #d64747;
+}
+
+.rnd-color {
+  height: 80px;
+  width: 300px;
+  font-size: 2rem;
+  border: 4px solid black;
+  border-radius: 10px;
+  background: rgb(135, 87, 87);
+  color: white;
 }
