@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  font-size: 2rem;
+  align-items: center;
+  background-color: rgb(239, 239, 239);
+  padding: 3rem;
+}
+
+h1 {
+}
+
+.btn {
+  font-size: 2rem;
+  width: 170px;
+  height: 100px;
+  background-color: rgb(0, 87, 248);
+  color: white;
+  border-radius: 10px;
+}
+
+.quote-wrapper {
+  font-size: 2rem;
+  margin-block: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.static-quote {
+  padding: 2rem;
+}
+
+p {
+  color: rgb(181, 181, 181);
+}
+
+.dynamic-quote {
+  max-width: 1400px;
+}
