@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="main-container">
+        <article class="article">
+      <header class="header">
+        <h1>Todo App</h1>
+      </header>
+      <section>
+        <h2>Filter & Options</h2>
+      </section>
+        <section>
+          <input type="radio" id="all" class="radiobtn"/>
+          <label for="all">All</label>
+        </section>
+        <section>
+          <input type="radio" id="open" class="radiobtn" />
+          <label for="open">Open</label>
+        </section>
+        <section>
+          <input type="radio" id="done" class="radiobtn" />
+          <label for="done">Done</label>
+        </section>
+        <button class="btn-remove" id="btn-remove">Remove done Todos</button>
+        <section class="input-text-wrapper">
+          <input type="text" id="inp-add" class="inpadd"/>
+          <button class="btn-add" id="btn-add">Add</button>
+          <p class="warningDoppelt" id="warning-doppelt-text">Das Todo existiert bereits</p>
+          <p class="warningShort" id="warning-short">Das Todo muss mehr als 5 Zeichen haben</p>
+        </section>
+        <section>
+            <h2>Your Todos</h2>
+        <ul id="list"></ul>
+    </section>
+      </article>
+         <footer></footer>
+      <script src="script.js"></script>
+</html>
+    </main>
+  </body>
+  

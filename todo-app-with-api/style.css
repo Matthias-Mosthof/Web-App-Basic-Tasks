@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: #073b4c;
+  --light-blue: #118ab2;
+  --green: #06d6a0;
+  --yellow: #f5ab00;
+  --pink: #ef476f;
+  font-family: sans-serif;
+}
+.header {
+  background-color: #ef476f;
+  width: 100%;
+  text-align: center;
+
+  color: #f5f5f5;
+  text-shadow: 2px 2px var(--light-blue), 4px 4px var(--yellow);
+  font-size: 35px;
+}
+.radiobtn {
+  all: unset;
+  display: inline-block;
+  flex-grow: 1;
+  width: auto;
+  background-color: white;
+  padding: 0.5em;
+  border: 0.1em solid var(--dark-blue);
+  border-radius: 50%;
+}
+
+.radiobtn:checked {
+  background-color: var(--light-blue);
+}
+
+.radiobtn:focus {
+  border: 0.1em solid var(--yellow);
+}
+
+.inpadd {
+  all: unset;
+  display: inline-block;
+  flex-grow: 1;
+  width: auto;
+  background-color: white;
+  padding: 0.5em;
+  border: 0.1em solid transparent;
+  border-radius: 0.3em;
+}
+
+.inpadd {
+  border: 0.1em solid var(--yellow);
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  display: "none";
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-remove {
+  width: 10rem;
+  all: unset;
+  color: white;
+  background-color: var(--light-blue);
+  padding: 0.25em 0.4em;
+  border-radius: 0.3em;
+  border: 0.1em solid transparent;
+  box-shadow: 3px 3px 0px var(--pink);
+}
+
+.btn-add {
+  all: unset;
+  color: white;
+  background-color: var(--light-blue);
+  padding: 0.25em 0.4em;
+  border-radius: 0.3em;
+  border: 0.1em solid transparent;
+  box-shadow: 3px 3px 0px var(--pink);
+}
+
+/* for JS */
+
+.remove {
+  text-decoration: line-through;
+}
+
+.warningDoppelt {
+  color: red;
+  position: absolute;
+  top: 445px;
+  font-size: 12px;
+  display: none;
+}
+
+.warningShort {
+  color: red;
+  position: absolute;
+  top: 445px;
+  font-size: 12px;
+  display: none;
+}
