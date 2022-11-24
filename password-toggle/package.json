@@ -1,0 +1,18 @@
+{
+  "name": "password-toggle",
+  "version": "1.0.0",
+  "description": "- Add a input that holds a fictive password\r - Add a button that will toggle the readability of the password in the input\r - Change the text of the button to \"Show Password\" if the password is hidden\r - Change the text of the button to \"Hide Password\" if the password is visible",
+  "scripts": {
+    "serve": "serve ./src",
+    "e2e": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.1.2"
+  },
+  "dependencies": {
+    "cypress": "^11.2.0"
+  }
+}
